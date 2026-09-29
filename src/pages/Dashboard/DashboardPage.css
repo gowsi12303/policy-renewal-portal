@@ -1,0 +1,90 @@
+/* Dashboard page layout. The page container comes from styles/page.css (.page);
+   widget styles live in components/dashboard/dashboard.css.
+   Mobile: one column. Tablet (>= 640px): 2-column KPIs.
+   Desktop (>= 1024px): 4-column KPIs, chart beside "Attention Required". */
+
+/* ---------- Header ---------- */
+
+.dashboard__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.dashboard__title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+.dashboard__subtitle {
+  margin-top: var(--space-1);
+  color: var(--color-text-muted);
+}
+
+.dashboard__status {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.875rem;
+}
+
+.dashboard__date {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.dashboard__status-label {
+  color: var(--color-text-muted);
+}
+
+/* ---------- KPI row ---------- */
+
+.dashboard__kpis {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+/* ---------- Main grid ---------- */
+
+.dashboard__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-6);
+}
+
+/* ---------- Tablet ---------- */
+
+@media (min-width: 640px) {
+  .dashboard__header {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .dashboard__status {
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  .dashboard__kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ---------- Desktop ---------- */
+
+@media (min-width: 1024px) {
+  .dashboard__kpis {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .dashboard__grid {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  }
+
+  .dashboard__table {
+    grid-column: 1 / -1;
+  }
+}

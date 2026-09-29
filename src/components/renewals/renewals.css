@@ -1,0 +1,165 @@
+/* Styles for the Renewal Intelligence-only widgets (Risk Signals, renewals table
+   extras, Priority Renewals). Page layout lives in
+   pages/RenewalIntelligence/RenewalIntelligencePage.css.
+   Shared pieces own their styles: the risk donut (components/charts/),
+   the filter toolbar (components/common/FilterBar.css), buttons and tables (components/common/). */
+
+/* ---------- Risk signals ---------- */
+
+.signal-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.signal {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.signal__icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+}
+
+.signal__icon .icon {
+  width: 18px;
+  height: 18px;
+}
+
+.signal--high .signal__icon {
+  color: var(--color-danger);
+  background: var(--color-danger-bg);
+}
+
+.signal--medium .signal__icon {
+  color: var(--color-warning);
+  background: var(--color-warning-bg);
+}
+
+.signal__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.signal__label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.signal__meta {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.signal__tag {
+  flex-shrink: 0;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.signal--high .signal__tag {
+  color: var(--color-danger);
+  background: var(--color-danger-bg);
+}
+
+.signal--medium .signal__tag {
+  color: var(--color-warning);
+  background: var(--color-warning-bg);
+}
+
+/* Tag moves under the text on narrow screens */
+@media (max-width: 479px) {
+  .signal {
+    flex-wrap: wrap;
+  }
+
+  .signal__tag {
+    margin-left: 48px;
+  }
+}
+
+/* ---------- Renewals table ---------- */
+/* Base styles come from components/common/DataTable.css */
+
+.renewals-grid__customer {
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+/* ---------- Priority renewals ---------- */
+
+.priority-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+.priority-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-top: 4px solid var(--color-warning);
+  border-radius: var(--radius-sm);
+}
+
+.priority-card--high {
+  border-top-color: var(--color-danger);
+}
+
+.priority-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+.priority-card__customer {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.priority-card__meta {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.priority-card__reason {
+  flex: 1;
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+.priority-card .btn {
+  margin-top: var(--space-2);
+}
+
+@media (min-width: 768px) {
+  .priority-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

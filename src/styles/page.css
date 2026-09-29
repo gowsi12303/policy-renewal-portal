@@ -1,0 +1,39 @@
+/* Shared page shell for every page inside MainLayout: content width,
+   page padding and spacing between sections. Pages keep only their own
+   internal grids in their page CSS.
+   Usage: <div className="page">...</div> */
+.page {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-4) var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* Main column + side column on desktop, stacked below 1024px */
+.page__split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.page__stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  min-width: 0;
+}
+
+@media (min-width: 640px) {
+  .page {
+    padding: var(--space-8);
+  }
+}
+
+@media (min-width: 1024px) {
+  .page__split {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  }
+}

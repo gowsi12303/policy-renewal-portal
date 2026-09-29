@@ -1,0 +1,54 @@
+/* Broker Self-Service page layout. The page container comes from styles/page.css (.page).
+   Mobile: one column. Tablet (>= 640px): 2-column action cards.
+   Desktop (>= 1024px): 4 action cards, form column + side column. */
+
+.self-service__actions {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-4);
+}
+
+.self-service__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.self-service__column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  min-width: 0;
+}
+
+/* Sections opened from the quick actions */
+.self-service__section {
+  border-radius: var(--radius-md);
+  scroll-margin-top: var(--space-6);
+}
+
+.self-service__section:focus {
+  outline: none;
+}
+
+.self-service__section.is-active > .card {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+@media (min-width: 640px) {
+  .self-service__actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .self-service__actions {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .self-service__grid {
+    grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+  }
+}

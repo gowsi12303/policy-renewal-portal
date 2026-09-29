@@ -1,0 +1,37 @@
+/* Analytics page layout. The page container comes from styles/page.css (.page).
+   Mobile: one column. Tablet (>= 640px): 2-column KPIs.
+   Desktop (>= 1024px): 4-column KPIs, charts in a 2-column grid,
+   policy type chart spanning the full width. */
+
+.analytics-page__kpis {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-4);
+}
+
+.analytics-page__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-6);
+  align-items: start;
+}
+
+@media (min-width: 640px) {
+  .analytics-page__kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .analytics-page__kpis {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .analytics-page__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .analytics-page__wide {
+    grid-column: 1 / -1;
+  }
+}

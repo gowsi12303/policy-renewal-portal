@@ -1,0 +1,121 @@
+/* Shared table style used by every data table in the portal.
+   Wrap the table so it scrolls inside its own box on small screens:
+   <div className="data-table-scroll" tabIndex={0} role="region" aria-label="...">
+     <table className="data-table">...</table>
+   </div>
+   Width modifiers keep columns readable instead of squeezing them:
+   .data-table--narrow (720px), default (760px), .data-table--wide (1040px). */
+
+.data-table-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.data-table-scroll:focus-visible {
+  outline: 3px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+.data-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.data-table--narrow {
+  min-width: 720px;
+}
+
+.data-table--wide {
+  min-width: 1040px;
+}
+
+.data-table th,
+.data-table td {
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  vertical-align: middle;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.data-table thead th {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  background: var(--color-bg);
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.data-table tbody tr:hover {
+  background: var(--color-row-hover);
+}
+
+.data-table tbody tr.is-selected {
+  background: var(--color-selected-bg);
+}
+
+/* Rows that open something when clicked */
+.data-table .data-table__row--clickable {
+  cursor: pointer;
+}
+
+/* ---------- Cell content ---------- */
+
+.data-table .data-table__strong {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.data-table .data-table__num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.data-table .data-table__urgent {
+  font-weight: 700;
+  color: var(--color-danger);
+}
+
+/* Link inside a cell, e.g. a policy ID */
+.data-table__link {
+  font-weight: 600;
+  border-radius: 2px;
+}
+
+.data-table__link:hover {
+  text-decoration: underline;
+}
+
+.data-table__link:focus-visible {
+  outline: 3px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+/* ---------- Empty states ---------- */
+
+/* Holds an <EmptyState> component */
+.data-table .data-table__empty {
+  padding: 0;
+  white-space: normal;
+}
+
+/* Plain one-line "no results" message */
+.data-table .data-table__message {
+  padding: var(--space-8) var(--space-4);
+  text-align: center;
+  color: var(--color-text-muted);
+  white-space: normal;
+}
+
+/* No hover highlight on the empty-state row */
+.data-table tbody tr:has(> .data-table__empty, > .data-table__message):hover {
+  background: none;
+}

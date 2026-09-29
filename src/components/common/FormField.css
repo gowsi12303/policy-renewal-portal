@@ -1,0 +1,79 @@
+/* Labelled form field (input, select or textarea), used on Self-Service and My Profile. */
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.form-field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.form-field__required {
+  color: var(--color-danger);
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 var(--space-3);
+  font: inherit;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.form-field textarea {
+  padding: var(--space-3);
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.form-field select {
+  cursor: pointer;
+}
+
+.form-field input:hover,
+.form-field select:hover,
+.form-field textarea:hover {
+  border-color: var(--color-border-strong);
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+.form-field input[readonly],
+.form-field select:disabled {
+  color: var(--color-text-muted);
+  background: var(--color-bg);
+  cursor: not-allowed;
+}
+
+.form-field [aria-invalid='true'] {
+  border-color: var(--color-danger);
+}
+
+.form-field__hint {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+/* Also used for standalone error messages (e.g. the upload file-type error) */
+.form-field__error {
+  font-size: 0.8rem;
+  color: var(--color-danger);
+}

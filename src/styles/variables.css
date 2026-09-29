@@ -1,0 +1,64 @@
+/* Design tokens: colours, spacing, radii and breakpoints used across the app.
+   Change a value here and it updates everywhere. */
+:root {
+  /* Brand */
+  --color-primary: #1d4ed8;
+  --color-primary-dark: #1e3a8a;
+  --color-primary-light: #dbeafe;
+
+  /* Status (renewal risk, policy state) */
+  --color-success: #15803d;
+  --color-warning: #b45309;
+  --color-danger: #b91c1c;
+  --color-info: #0369a1;
+
+  /* Pale status backgrounds (badges, risk tints, notices) */
+  --color-danger-bg: #fee2e2;
+  --color-danger-border: #fecaca;
+  --color-warning-bg: #fef3c7;
+  --color-success-bg: #dcfce7;
+  --color-info-bg: #e0f2fe;
+
+  /* Neutrals */
+  --color-bg: #f5f7fb;
+  --color-surface: #ffffff;
+  --color-surface-subtle: #f8fafc; /* light panels: dropzone, empty states, outside-month days */
+  --color-border: #e2e8f0;
+  --color-border-strong: #cbd5e1; /* hover borders, dashed outlines, separators */
+  --color-text: #1e293b;
+  --color-text-muted: #64748b;
+  --color-text-subtle: #94a3b8; /* placeholders, de-emphasised dates */
+  --color-on-primary: #ffffff; /* text/icons on brand-coloured backgrounds */
+
+  /* Interaction */
+  --color-row-hover: #f8fafc; /* table/list row hover */
+  --color-selected-bg: #eff6ff; /* selected row/day, active drop target */
+  --color-primary-subtle: #f8fbff; /* faint blue: card hover, unread items */
+  --color-focus-ring: var(--color-primary); /* keyboard focus outlines */
+  --color-overlay: rgba(15, 23, 42, 0.4); /* backdrop behind the mobile drawer */
+
+  /* Typography */
+  --font-sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  /* Shape */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --shadow-card: 0 1px 3px rgba(15, 23, 42, 0.08);
+
+  /* Layout */
+  --sidebar-width: 240px;
+  --topbar-height: 64px;
+}
+
+/* Breakpoints (CSS variables can't be used in media queries, so for reference):
+   mobile  < 640px
+   tablet  640px - 1023px
+   desktop >= 1024px */

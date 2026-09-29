@@ -1,0 +1,105 @@
+/* Search/filter toolbar and result count, used above the tables on
+   Renewal Intelligence, Policies and Customers.
+   Markup: .filters > .filter-field (label + select) / .filter-field--search > .filter-search (icon + input)
+   followed by <p className="results-bar">Showing ...</p> */
+
+.filters {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+  align-items: end;
+  margin-bottom: var(--space-4);
+}
+
+.filter-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.filter-field label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.filter-field select,
+.filter-search input {
+  width: 100%;
+  height: 40px;
+  font: inherit;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.filter-field select {
+  padding: 0 var(--space-3);
+  cursor: pointer;
+}
+
+.filter-search {
+  position: relative;
+}
+
+.filter-search input {
+  padding: 0 var(--space-3) 0 36px;
+}
+
+.filter-search__icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  width: 16px;
+  height: 16px;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.filter-field select:focus,
+.filter-search input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+@media (min-width: 640px) {
+  .filters {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .filter-field--search {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .filters {
+    grid-template-columns: minmax(0, 2.2fr) repeat(3, minmax(0, 1fr)) auto;
+  }
+
+  .filter-field--search {
+    grid-column: auto;
+  }
+}
+
+/* ---------- Result count ---------- */
+
+.results-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.results-bar strong {
+  color: var(--color-text);
+}

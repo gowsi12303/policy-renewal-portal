@@ -1,0 +1,16 @@
+/* Renewals due vs renewed line chart (Dashboard and Analytics). */
+
+.renewal-chart {
+  margin: 0;
+}
+
+.renewal-chart__plot {
+  width: 100%;
+  height: 280px;
+}
+
+@media (min-width: 640px) {
+  .renewal-chart__plot {
+    height: 320px;
+  }
+}

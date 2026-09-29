@@ -1,0 +1,34 @@
+/* Renewal Calendar page layout. The page container comes from styles/page.css (.page).
+   Mobile/tablet: calendar, then details and upcoming list stacked below.
+   Tablet (>= 768px): details and upcoming list side by side under the calendar.
+   Desktop (>= 1200px): calendar with a right-side panel. */
+
+.calendar-page__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.calendar-page__side {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-6);
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .calendar-page__side {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .calendar-page__layout {
+    grid-template-columns: minmax(0, 1fr) 340px;
+  }
+
+  .calendar-page__side {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

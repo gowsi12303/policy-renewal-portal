@@ -1,0 +1,188 @@
+/* ---------- All / Unread toggle ---------- */
+
+.notif-views {
+  display: inline-flex;
+  gap: 2px;
+  margin-bottom: var(--space-4);
+  padding: 3px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.notif-views__button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 36px;
+  padding: 0 var(--space-4);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  background: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.notif-views__button.is-active {
+  color: var(--color-text);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.notif-views__count {
+  min-width: 20px;
+  padding: 0 6px;
+  font-size: 0.75rem;
+  color: var(--color-on-primary);
+  background: var(--color-primary);
+  border-radius: 999px;
+}
+
+/* ---------- List ---------- */
+
+.notif-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.notif {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+/* Unread: tinted background, left bar, bold title and a "New" tag */
+.notif.is-unread {
+  background: var(--color-primary-subtle);
+  border-left: 4px solid var(--color-primary);
+}
+
+.notif__icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+
+.notif__icon .icon {
+  width: 18px;
+  height: 18px;
+}
+
+.notif--renewal .notif__icon {
+  color: var(--color-danger);
+  background: var(--color-danger-bg);
+}
+
+.notif--document .notif__icon {
+  color: var(--color-warning);
+  background: var(--color-warning-bg);
+}
+
+.notif--policy .notif__icon {
+  color: var(--color-success);
+  background: var(--color-success-bg);
+}
+
+.notif__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.notif__heading {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.notif__title {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.notif.is-unread .notif__title {
+  font-weight: 700;
+}
+
+.notif__new {
+  padding: 1px 8px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  border-radius: 999px;
+}
+
+.notif__description {
+  margin-top: 2px;
+  font-size: 0.875rem;
+  color: var(--color-text);
+}
+
+.notif__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.notif__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-4);
+  margin-top: var(--space-2);
+}
+
+.notif__link {
+  min-height: 32px;
+  padding: 0;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: none;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+a.notif__link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.notif__link:hover {
+  text-decoration: underline;
+}
+
+/* Touch screens and phones: 44px tall tap area for "View policy" / "Mark as read" */
+@media (pointer: coarse), (max-width: 639px) {
+  .notif__link {
+    min-height: 44px;
+  }
+}
+
+.notif-views__button:focus-visible,
+.notif__link:focus-visible {
+  outline: 3px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}

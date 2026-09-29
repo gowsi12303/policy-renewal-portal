@@ -1,0 +1,43 @@
+/* Matches the Dashboard header style */
+.page-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.page-header__title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+.page-header__subtitle {
+  margin-top: var(--space-1);
+  color: var(--color-text-muted);
+}
+
+.page-header__meta {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.page-header__meta strong {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+@media (min-width: 640px) {
+  .page-header {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .page-header__meta {
+    align-items: flex-end;
+    text-align: right;
+  }
+}

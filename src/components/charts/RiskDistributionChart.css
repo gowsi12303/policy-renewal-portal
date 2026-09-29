@@ -1,0 +1,117 @@
+/* Risk distribution donut chart (Renewal Intelligence and Analytics). */
+
+.risk-chart {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.risk-chart__plot {
+  position: relative;
+  width: 100%;
+  max-width: 240px;
+  height: 220px;
+}
+
+.risk-chart__center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.risk-chart__total {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-text);
+}
+
+.risk-chart__caption {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+/* Hover tooltip. Recharts places its top-left corner on the hovered segment's
+   outer edge; the transform centres it on that point instead. */
+.risk-chart__tooltip {
+  display: flex;
+  flex-direction: column;
+  padding: 6px 10px;
+  font-size: 13px;
+  line-height: 1.35;
+  white-space: nowrap;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  transform: translate(-50%, -50%);
+}
+
+.risk-chart__tooltip strong {
+  font-weight: 600;
+}
+
+.risk-chart figcaption {
+  width: 100%;
+}
+
+.risk-legend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.risk-legend__item {
+  display: grid;
+  grid-template-columns: 12px 1fr auto 48px;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  font-size: 0.9rem;
+}
+
+.risk-legend__swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+.risk-legend__label {
+  color: var(--color-text);
+}
+
+.risk-legend__count {
+  font-weight: 700;
+  color: var(--color-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.risk-legend__percent {
+  text-align: right;
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (min-width: 640px) {
+  .risk-chart {
+    flex-direction: row;
+    gap: var(--space-6);
+  }
+
+  .risk-chart__plot {
+    flex-shrink: 0;
+    width: 220px;
+  }
+}

@@ -1,0 +1,103 @@
+// Mock customer details, keyed by the customer names used in renewals.js.
+// Emails use the reserved ".example" domain so they are clearly fictional.
+// activePolicies counts all in-force policies, not only those renewing soon.
+export const customerDetails = {
+  'Arjun Textiles': {
+    contact: 'Ravi Arjunan',
+    email: 'ravi.arjunan@arjuntextiles.example',
+    city: 'Tiruppur',
+    customerSince: 2019,
+    activePolicies: 3,
+  },
+  'Greenfield Foods': {
+    contact: 'Meera Nair',
+    email: 'meera.nair@greenfieldfoods.example',
+    city: 'Kochi',
+    customerSince: 2020,
+    activePolicies: 2,
+  },
+  'Kaveri Pharma': {
+    contact: 'Suresh Kumar',
+    email: 'suresh.kumar@kaveripharma.example',
+    city: 'Bengaluru',
+    customerSince: 2018,
+    activePolicies: 4,
+  },
+  'Metro Logistics': {
+    contact: 'Farhan Qureshi',
+    email: 'farhan.qureshi@metrologistics.example',
+    city: 'Mumbai',
+    customerSince: 2017,
+    activePolicies: 5,
+  },
+  'Sunrise Hotels': {
+    contact: 'Anjali Menon',
+    email: 'anjali.menon@sunrisehotels.example',
+    city: 'Panaji',
+    customerSince: 2021,
+    activePolicies: 2,
+  },
+  'Deccan Builders': {
+    contact: 'Prakash Reddy',
+    email: 'prakash.reddy@deccanbuilders.example',
+    city: 'Hyderabad',
+    customerSince: 2019,
+    activePolicies: 3,
+  },
+  'Apex Manufacturing': {
+    contact: 'Vikram Shah',
+    email: 'vikram.shah@apexmfg.example',
+    city: 'Pune',
+    customerSince: 2016,
+    activePolicies: 4,
+  },
+  'Coastal Marine Exports': {
+    contact: "Joseph D'Souza",
+    email: 'joseph.dsouza@coastalmarine.example',
+    city: 'Mangaluru',
+    customerSince: 2020,
+    activePolicies: 2,
+  },
+  'Nilgiri Tea Estates': {
+    contact: 'Lakshmi Ramesh',
+    email: 'lakshmi.ramesh@nilgiritea.example',
+    city: 'Coonoor',
+    customerSince: 2022,
+    activePolicies: 1,
+  },
+  'Pinnacle IT Services': {
+    contact: 'Karthik Iyer',
+    email: 'karthik.iyer@pinnacleit.example',
+    city: 'Chennai',
+    customerSince: 2021,
+    activePolicies: 2,
+  },
+  'Shree Balaji Traders': {
+    contact: 'Mahesh Agarwal',
+    email: 'mahesh.agarwal@balajitraders.example',
+    city: 'Jaipur',
+    customerSince: 2023,
+    activePolicies: 1,
+  },
+  'Vardhman Healthcare Group': {
+    contact: 'Dr. Neha Jain',
+    email: 'neha.jain@vardhmanhealth.example',
+    city: 'Ludhiana',
+    customerSince: 2018,
+    activePolicies: 3,
+  },
+  'Horizon Retail Chains': {
+    contact: 'Sameer Kapoor',
+    email: 'sameer.kapoor@horizonretail.example',
+    city: 'New Delhi',
+    customerSince: 2019,
+    activePolicies: 3,
+  },
+  'Lakshmi Auto Components': {
+    contact: 'Ganesh Babu',
+    email: 'ganesh.babu@lakshmiauto.example',
+    city: 'Coimbatore',
+    customerSince: 2020,
+    activePolicies: 2,
+  },
+}

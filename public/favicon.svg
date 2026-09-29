@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <!-- Policy Renewal Intelligence: shield-and-check mark (same shape as the sidebar/login logo) -->
+  <rect width="32" height="32" rx="7" fill="#1d4ed8"/>
+  <g transform="translate(4 4)" fill="none" stroke="#ffffff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3 5 6v5c0 4.5 3 8.5 7 10 4-1.5 7-5.5 7-10V6l-7-3z"/>
+    <path d="m9 12 2 2 4-4"/>
+  </g>
+</svg>
